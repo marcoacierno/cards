@@ -111,8 +111,8 @@ const query = {
   whiteText: 'White text',
 }
 
-export const simple = {
-  name: 'simple',
+export const announcement = {
+  name: 'announcement',
   code,
   query
 }
