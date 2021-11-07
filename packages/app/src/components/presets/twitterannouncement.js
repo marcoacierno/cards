@@ -62,5 +62,6 @@ const query = {
 export const twitterannouncement = {
   name: 'Announcement - Twitter',
   code,
-  query
+  query,
+  aspectRatio: '16/9'
 }
