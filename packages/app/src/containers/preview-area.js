@@ -66,6 +66,7 @@ export const PreviewArea = ({ isEditor }) => {
   const {
     downloadScreenshot,
     showOverlay,
+    aspectRatio,
     theme: { bg, color }
   } = useContext(AppContext)
 
@@ -103,7 +104,7 @@ export const PreviewArea = ({ isEditor }) => {
           justifyContent: 'center'
         }}
       >
-        <AspectRatio ratio='16/9' style={{ minWidth: PREVIEW_CARD_WIDTH }}>
+        <AspectRatio ratio={aspectRatio} style={{ minWidth: PREVIEW_CARD_WIDTH }} className={`ratio-${aspectRatio.replace('/', '')}`}>
           <PreviewWrap {...wrapProps}>
             <LivePreview
               onClick={
@@ -168,7 +169,9 @@ export const PreviewArea = ({ isEditor }) => {
               justifyContent: 'center',
               mt: ['-18vw', '-6vw', 0],
               mb: [3, '', 0],
-              position: 'relative'
+              position: 'absolute',
+              top: '50px',
+              left: '25%',
             }}
           >
             <InternalLink href='#' sx={{ color }} onClick={downloadScreenshot}>

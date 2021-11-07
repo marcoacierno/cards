@@ -11,7 +11,7 @@ import themeContext from './theme-context'
 
 export const AppContext = createContext({})
 
-export default function AppContextProvider ({ children }) {
+export default function AppContextProvider({ children }) {
   const [query, setQuery] = useQueryState()
 
   const presetRef = useRef(presets[(query && query.preset) || DEFAULT_PRESET])
@@ -22,7 +22,9 @@ export default function AppContextProvider ({ children }) {
     handleQueryVariables,
     queryVariables,
     setCode,
-    setQueryVariables
+    setQueryVariables,
+    aspectRatio,
+    setAspectRatio
   } = editorContext(presetRef, query, setQuery)
 
   const [screenshotUrl, syncScreenshotUrl, downloadScreenshot] = useScreenshotUrl(queryVariables)
@@ -37,6 +39,7 @@ export default function AppContextProvider ({ children }) {
   const onPresetChange = useCallback(
     (presetName, newPreset) => {
       presetRef.current = newPreset
+      setAspectRatio(presetRef.current.aspectRatio || '16/9')
       setCode(presetRef.current.code)
       setQueryVariables(presetRef.current.query)
       setQuery({ p: undefined, preset: presetName }, { replace: true })
@@ -65,7 +68,8 @@ export default function AppContextProvider ({ children }) {
       queryVariables,
       screenshotUrl,
       showOverlay,
-      theme
+      theme,
+      aspectRatio
     }),
     [
       changeTheme,
@@ -83,7 +87,8 @@ export default function AppContextProvider ({ children }) {
       queryVariables,
       screenshotUrl,
       showOverlay,
-      theme
+      theme,
+      aspectRatio
     ]
   )
 

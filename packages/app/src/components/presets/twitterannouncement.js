@@ -48,8 +48,7 @@ const code = (
             {query.heading.toUpperCase()}
           </Heading>
         </Box>
-        {/* snake */}
-        <Snake />
+        <Snake style={{ position: "absolute", bottom: -14, right: 100, width: 170 }} />
       </Flex>
     </>
   </Inline>
@@ -61,7 +60,7 @@ const query = {
 }
 
 export const twitterannouncement = {
-  name: 'Twitter Announcement',
+  name: 'Announcement - Twitter',
   code,
   query
 }

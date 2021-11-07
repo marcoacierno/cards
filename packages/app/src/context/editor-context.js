@@ -10,7 +10,14 @@ const updateQuery = debounce(({ setQuery, code, queryVariables }) => {
   setQuery(newQuery)
 })
 
-export default function EditorContext (presetRef, query, setQuery) {
+export default function EditorContext(presetRef, query, setQuery) {
+  const [aspectRatio, setAspectRatio] = useState(() => {
+    if (isEmpty(query)) return presetRef.current.aspectRatio
+    const { aspectRatio } = query
+    if (isEmpty(aspectRatio)) return presetRef.current.aspectRatio
+    return aspectRatio || '16/9'
+  })
+
   const [code, setCode] = useState(() => {
     if (isEmpty(query)) return presetRef.current.code
     const { p } = query
@@ -57,6 +64,8 @@ export default function EditorContext (presetRef, query, setQuery) {
     queryVariables,
     setCode,
     setQuery,
-    setQueryVariables
+    setQueryVariables,
+    aspectRatio,
+    setAspectRatio
   }
 }

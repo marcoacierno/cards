@@ -11,7 +11,7 @@ const previews = (() => {
   return Object.keys(presets).reduce(
     (acc, presetName) => ({
       ...acc,
-      [presetName]: require(`../../public/preview/${presetName}.png`).default
+      [presetName]: require(`../../public/preview/twitterannouncement.png`).default
     }),
     {}
   )

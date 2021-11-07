@@ -19,6 +19,10 @@ const GlobalStylesheet = createGlobalStyle`
     background: rgba(255, 255, 255, 0.1);
   }
 
+  .ratio-916 > div {
+    transform: scale(0.5) !important;
+  }
+
   ${notificationStyles(theme)}
 `
 
@@ -31,7 +35,7 @@ const meta = {
 }
 
 export default class App extends NextApp {
-  render () {
+  render() {
     const { Component, pageProps } = this.props
     return (
       <ThemeProvider theme={theme}>

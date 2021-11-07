@@ -11,14 +11,14 @@ const toClipboard = async (text, name) => {
   notification(`Copied ${name} to clipboard`)
 }
 
-export default function OverlayPreview () {
-  const { query, screenshotUrl, theme } = useContext(AppContext)
+export default function OverlayPreview() {
+  const { query, screenshotUrl, theme, aspectRatio } = useContext(AppContext)
   const { borderColor, color, contrast } = theme
 
   return (
     <>
       <Box as='header'>
-        <AspectRatio ratio='16/9'>
+        <AspectRatio ratio={aspectRatio} className={`ratio-${aspectRatio.replace('/', '')}`}>
           <LivePreview
             shadow
             css={`
