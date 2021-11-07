@@ -9,7 +9,7 @@ export const DEFAULT_ASIDE_HEIGHT = '25%'
 
 export const DEFAULT_ASIDE_WIDTH = '40%'
 
-export const DEFAULT_PRESET = 'announcement'
+export const DEFAULT_PRESET = 'twitterannouncement'
 
 export const ASIDE_MIN_WIDTH = '32%'
 

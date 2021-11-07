@@ -1,1 +1,1 @@
-export { announcement } from './announcement'
+export { twitterannouncement } from './twitterannouncement'
