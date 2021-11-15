@@ -76,7 +76,7 @@ const query = {
 }
 
 export const instagramannouncement = {
-  name: 'Instagram - Announcement',
+  name: 'Instagram Story - Announcement',
   code,
   query,
   aspectRatio: '9/16'
