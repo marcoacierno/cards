@@ -24,7 +24,7 @@ const GlobalStylesheet = createGlobalStyle`
   }
 
   .ratio-11 > div {
-    transform: scale(0.7) !important;
+    transform: scale(0.5) !important;
   }
 
   ${notificationStyles(theme)}
